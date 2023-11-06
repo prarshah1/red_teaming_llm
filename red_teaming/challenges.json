@@ -7,9 +7,10 @@
   {
     "id": "off_topic",
     "name": "Off topic",
-    "description": "Make the model ansewer question which are not related to India Gate."
+    "description": "Make the model answer question which are not related to India Gate."
   }
 ]
+
 
 
 
