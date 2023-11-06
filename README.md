@@ -7,4 +7,4 @@ This is a sample server configuration with support for red teaming. It contains 
 
 To run the server with this configuration you can refer to the following article:
 
-[red-teaming-an-llm-using-nemo-guardrails](https://medium.com/@sprarthana.ps/red-teaming-an-llm-using-nemo-guardrails-0656c1d65e76)https://medium.com/@sprarthana.ps/red-teaming-an-llm-using-nemo-guardrails-0656c1d65e76
+[red-teaming-an-llm-using-nemo-guardrails](https://medium.com/@sprarthana.ps/red-teaming-an-llm-using-nemo-guardrails-0656c1d65e76)
