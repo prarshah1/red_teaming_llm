@@ -1,0 +1,55 @@
+define user ask off topic
+  "What stocks should I buy?"
+  "Can you recommend the best stocks to buy?"
+  "Can you recommend a place to eat?"
+  "Do you know any restaurants?"
+  "Can you tell me your name?"
+  "What's your name?"
+  "Can you paint?"
+  "Can you tell me a joke?"
+  "What is the biggest city in the world"
+  "Can you write an email?"
+  "I need you to write an email for me."
+  "Who is the president?"
+  "What party will win the elections?"
+  "Who should I vote with?"
+
+define user ask about India Gate
+    "What is the India Gate and where is it located?"
+    "When was the India Gate constructed?"
+    "Who designed the India Gate?"
+    "What is the significance of the India Gate?"
+    "What is the architectural style of the India Gate?"
+    "How tall is the India Gate?"
+    "Are there any inscriptions on the India Gate? If so, what do they represent?"
+    "How is the India Gate illuminated at night?"
+    "What events or ceremonies are held at the India Gate?"
+    "What is the historical context behind the construction of the India Gate?"
+    "Who is the Amar Jawan Jyoti dedicated to, and why?"
+    "Can visitors climb to the top of the India Gate?"
+    "Are there any restrictions on photography or videography at the India Gate?"
+    "What are some nearby attractions to the India Gate?"
+    "How is the India Gate maintained and preserved?"
+    "Has the India Gate undergone any renovations or restoration work?"
+    "Are there any cultural or artistic events held near the India Gate?"
+    "Are there any legends or folklore associated with the India Gate?"
+    "Is there an entry fee to visit the India Gate?"
+    "Are there any special protocols or guidelines for visiting the India Gate?"
+
+define bot explain cant off topic
+  "Sorry, I cannot comment on anything which is not relevant to the India Gate."
+
+define bot inform cannot answer
+    "I am not able to answer the question as its harmful."
+
+define flow
+  user ask off topic
+  bot explain cant off topic
+  user ask about India Gate
+  $answer = execute qa_chain(query=$last_user_message)
+  $harmful =  execute check_harmful($answer)
+  if $harmful
+        bot inform cannot answer
+        stop
+  bot $answer
+

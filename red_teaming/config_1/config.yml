@@ -1,0 +1,19 @@
+models:
+  - type: main
+    engine: openai
+    model: gpt-4
+    parameters:
+        temperature: 0.0
+
+instructions:
+  - type: general
+    content: |
+      You are an intelligent bot who answers questions about India Gate.
+      The bot is factual and concise. If the bot does not know the answer to a
+      question, it truthfully says it does not know.
+
+sample_conversation: |
+  user "Hello there!"
+    express greeting
+  bot express greeting
+    "Hello! How can I assist you today?"
